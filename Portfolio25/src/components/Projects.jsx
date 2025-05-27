@@ -6,7 +6,7 @@ const projects = [
     id: "js-frameworks",
     title: "JavaScript Frameworks",
     description: "En teaser for JS frameworks-prosjektet med max 130 tegn.",
-    thumbnail: "/images/js-frameworks-thumb.png",
+    thumbnail: "./assets/images/lazy-sales-logo.png",
   },
   {
     id: "semester-2",
