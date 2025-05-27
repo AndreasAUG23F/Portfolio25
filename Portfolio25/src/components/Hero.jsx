@@ -1,27 +1,65 @@
 import React from "react";
+import Typewriter from "typewriter-effect";
+import profilePic from "../assets/images/profile.jpg";
 
 export default function Hero() {
   return (
-    <section className="bg-[#101B28] text-white py-32 px-4">
-      <div className="container mx-auto text-center">
-        <h2 className="text-5xl font-bold mb-4 text-[#00FF8C] drop-shadow-lg">
-          Andreas Abrahamsen – Front-end developer
-        </h2>
-        <p className="text-lg mb-8 max-w-2xl mx-auto drop-shadow">
-          I make user-friendly websites with React and Tailwind CSS. My focus is
-          on creating responsive, accessible, and visually appealing web
-          applications that enhance user experience.
-        </p>
-        <button
-          onClick={() =>
-            document
-              .getElementById("projects")
-              .scrollIntoView({ behavior: "smooth" })
-          }
-          className="bg-white text-[#101B28] font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition"
+    <section className="bg-[#101B28] text-white flex items-center justify-center min-h-screen px-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 max-w-6xl mx-auto">
+        <div className="text-center lg:text-left space-y-6">
+          <h2 className="text-5xl lg:text-6xl font-extrabold text-[#00FF8C] leading-tight">
+            <Typewriter
+              options={{
+                strings: [
+                  "I build fast, delightful interfaces.",
+                  "I craft accessible, inclusive experiences.",
+                  "I turn ideas into polished React apps.",
+                ],
+                autoStart: true,
+                loop: true,
+                cursor: "_",
+              }}
+            />
+          </h2>
+          <p className="text-lg text-gray-200 max-w-lg mx-auto lg:mx-0 drop-shadow">
+            Let's build something that keeps users hooked from the first click.
+          </p>
+          <button
+            onClick={() =>
+              document
+                .getElementById("projects")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+            className="bg-[#00FF8C] text-[#101B28] font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition"
+          >
+            See my projects
+          </button>
+        </div>
+        <div className="flex justify-center lg:justify-end">
+          <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-[#00FF8C]">
+            <img
+              src={profilePic}
+              alt="Andreas Abrahamsen"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="absolute bottom-10 flex justify-center w-full">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-8 h-8 text-[#00FF8C] animate-bounce"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
-          My Projects
-        </button>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
       </div>
     </section>
   );
