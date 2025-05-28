@@ -9,25 +9,25 @@ import examThumb from "../assets/images/logoHolidazeBlue.png";
 
 const projects = [
   {
-    id: "js-frameworks",
-    title: "JavaScript Frameworks",
-    date: "Mar 2024",
-    description:
-      "A sleek SPA demoing modern frameworks in a component-driven architecture.",
-    thumbnail: jsThumb,
-  },
-  {
     id: "semester-2",
     title: "Semester Project 2",
-    date: "Jun 2024",
+    date: "DEC 2024",
     description:
       "An e-commerce prototype focused on performance and user-first UX flows.",
     thumbnail: semThumb,
   },
   {
+    id: "js-frameworks",
+    title: "JavaScript Frameworks",
+    date: "JAN 2024",
+    description:
+      "A sleek SPA demoing modern frameworks in a component-driven architecture.",
+    thumbnail: jsThumb,
+  },
+  {
     id: "exam-2",
     title: "Exam Project 2",
-    date: "Aug 2024",
+    date: "MAY 2025",
     description:
       "A travel booking site optimized for speed, accessibility and delight.",
     thumbnail: examThumb,
