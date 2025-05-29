@@ -1,9 +1,12 @@
 // src/pages/ProjectPage.jsx
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   FaExternalLinkAlt,
   FaGithub,
+  FaTimes,
+  FaChevronLeft,
+  FaChevronRight,
   FaReact,
   FaHtml5,
   FaCss3Alt,
@@ -15,9 +18,15 @@ import {
   SiFigma,
 } from "react-icons/si";
 
+// Screenshots for JS Frameworks
 import jsThumb from "../assets/images/bidifyLogo.png";
+// Screenshots for Semester-2
 import semThumb from "../assets/images/lazy-sales-logo.png";
-import examThumb from "../assets/images/logoHolidazeBlue.png";
+// Screenshots for Holidaze (Exam-2)
+import hsc1 from "../assets/images/hsc1.png";
+import hsc2 from "../assets/images/hsc2.png";
+import hsc3 from "../assets/images/hsc3.png";
+import hsc4 from "../assets/images/hsc4.png";
 
 const allProjects = [
   {
@@ -63,7 +72,7 @@ const allProjects = [
   },
   {
     id: "exam-2",
-    title: "Exam Project 2",
+    title: "Holidaze (Exam Project 2)",
     description:
       "A travel booking site optimized for speed, accessibility and UX, featuring search, detail pages and map integration.",
     liveUrl: "https://yourdomain.com/exam-2",
@@ -73,13 +82,14 @@ const allProjects = [
       "Lazy-loaded images & code splitting",
       "Interactive map integration",
     ],
-    screenshots: [examThumb],
+    screenshots: [hsc1, hsc2, hsc3, hsc4],
     tech: [
       { name: "React", icon: <FaReact /> },
       { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-      { name: "JavaScript", icon: <SiJavascript /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
       { name: "HTML5", icon: <FaHtml5 /> },
       { name: "CSS3", icon: <FaCss3Alt /> },
+      { name: "Figma", icon: <SiFigma /> },
     ],
   },
 ];
@@ -87,6 +97,9 @@ const allProjects = [
 export default function ProjectPage() {
   const { projectId } = useParams();
   const project = allProjects.find((p) => p.id === projectId);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   if (!project) {
     return (
@@ -101,8 +114,53 @@ export default function ProjectPage() {
     );
   }
 
+  const openModal = (index) => {
+    setCurrentIndex(index);
+    setIsModalOpen(true);
+  };
+  const closeModal = () => setIsModalOpen(false);
+  const prev = () =>
+    setCurrentIndex((i) => (i === 0 ? project.screenshots.length - 1 : i - 1));
+  const next = () =>
+    setCurrentIndex((i) => (i === project.screenshots.length - 1 ? 0 : i + 1));
+
   return (
     <main className="bg-[#101B28] text-white py-16">
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+          {/* Lukkeknapp */}
+          <button
+            onClick={closeModal}
+            className="absolute top-6 right-6 bg-white p-2 rounded-full"
+          >
+            <FaTimes className="text-[#101B28] text-2xl" />
+          </button>
+
+          {/* Forrige */}
+          <button
+            onClick={prev}
+            className="absolute left-6 bg-white p-2 rounded-full"
+          >
+            <FaChevronLeft className="text-[#101B28] text-2xl" />
+          </button>
+
+          {/* Bilde */}
+          <img
+            src={project.screenshots[currentIndex]}
+            alt={`${project.title} screenshot ${currentIndex + 1}`}
+            className="max-w-full max-h-full rounded-lg shadow-lg"
+          />
+
+          {/* Neste */}
+          <button
+            onClick={next}
+            className="absolute right-6 bg-white p-2 rounded-full"
+          >
+            <FaChevronRight className="text-[#101B28] text-2xl" />
+          </button>
+        </div>
+      )}
+
       <div className="max-w-4xl mx-auto px-6 space-y-16">
         {/* — Header */}
         <header className="space-y-4">
@@ -154,12 +212,17 @@ export default function ProjectPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {project.screenshots.map((src, i) => (
-              <img
+              <div
                 key={i}
-                src={src}
-                alt={`${project.title} screenshot ${i + 1}`}
-                className="w-full rounded"
-              />
+                className="overflow-hidden rounded-lg cursor-pointer transform transition hover:scale-105"
+                onClick={() => openModal(i)}
+              >
+                <img
+                  src={src}
+                  alt={`${project.title} screenshot ${i + 1}`}
+                  className="w-full object-cover"
+                />
+              </div>
             ))}
           </div>
         </section>

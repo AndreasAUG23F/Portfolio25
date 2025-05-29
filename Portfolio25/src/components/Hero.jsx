@@ -10,11 +10,7 @@ export default function Hero() {
           <h2 className="text-5xl lg:text-6xl font-extrabold text-[#00FF8C] leading-tight">
             <Typewriter
               options={{
-                strings: [
-                  "I build fast, delightful interfaces.",
-                  "I craft accessible, inclusive experiences.",
-                  "I turn ideas into polished React apps.",
-                ],
+                strings: ["Andreas<br> Abrahamsen", "Front End Developer."],
                 autoStart: true,
                 loop: true,
                 cursor: "_",
@@ -36,7 +32,7 @@ export default function Hero() {
           </button>
         </div>
         <div className="flex justify-center lg:justify-end">
-          <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-[#00FF8C]">
+          <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-[#]">
             <img
               src={profilePic}
               alt="Andreas Abrahamsen"
@@ -48,7 +44,7 @@ export default function Hero() {
       <div className="absolute bottom-10 flex justify-center w-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-8 h-8 text-[#00FF8C] animate-bounce"
+          className="w-8 h-8 text-[#9f9f9f] animate-bounce"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
