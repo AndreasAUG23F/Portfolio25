@@ -75,8 +75,8 @@ const allProjects = [
     title: "Holidaze (Exam Project 2)",
     description:
       "A travel booking site optimized for speed, accessibility and UX, featuring search, detail pages and map integration.",
-    liveUrl: "https://yourdomain.com/exam-2",
-    repoUrl: "https://github.com/username/exam-2",
+    liveUrl: "https://holidazer.netlify.app/",
+    repoUrl: "https://github.com/Andreasjoa23/PE2-Holidaze.git",
     features: [
       "Accessible components (ARIA, keyboard nav)",
       "Lazy-loaded images & code splitting",
