@@ -10,6 +10,7 @@ import {
   FaReact,
   FaHtml5,
   FaCss3Alt,
+  FaCopy,
 } from "react-icons/fa";
 import {
   SiJavascript,
@@ -124,6 +125,11 @@ export default function ProjectPage() {
   const next = () =>
     setCurrentIndex((i) => (i === project.screenshots.length - 1 ? 0 : i + 1));
 
+  const copyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    alert("Link kopiert til utklippstavlen!");
+  };
+
   return (
     <main className="bg-[#101B28] text-white py-16">
       {isModalOpen && (
@@ -163,28 +169,36 @@ export default function ProjectPage() {
 
       <div className="max-w-4xl mx-auto px-6 space-y-16">
         {/* — Header */}
-        <header className="space-y-4">
+        <header className="flex items-center justify-between">
           <h1 className="text-3xl font-bold text-[#00FF8C]">{project.title}</h1>
-          <p className="text-gray-300">{project.description}</p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#00FF8C] text-[#101B28] px-5 py-2 rounded transition hover:bg-[#00e77a]"
-            >
-              Live Demo <FaExternalLinkAlt />
-            </a>
-            <a
-              href={project.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-[#00FF8C] text-[#00FF8C] px-5 py-2 rounded transition hover:bg-[#00FF8C]/20"
-            >
-              View Code <FaGithub />
-            </a>
-          </div>
+          <button
+            onClick={copyLink}
+            className="inline-flex items-center gap-2 bg-[#00FF8C] text-[#101B28] px-4 py-2 rounded hover:bg-[#00e77a] transition"
+          >
+            <FaCopy className="text-xl" />
+            <span>Copy URL</span>
+          </button>
         </header>
+        <p className="text-gray-300">{project.description}</p>
+
+        <div className="flex flex-wrap gap-4">
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#00FF8C] text-[#101B28] px-5 py-2 rounded transition hover:bg-[#00e77a]"
+          >
+            Live Demo <FaExternalLinkAlt />
+          </a>
+          <a
+            href={project.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-[#00FF8C] text-[#00FF8C] px-5 py-2 rounded transition hover:bg-[#00FF8C]/20"
+          >
+            View Code <FaGithub />
+          </a>
+        </div>
 
         <hr className="border-gray-700" />
 
