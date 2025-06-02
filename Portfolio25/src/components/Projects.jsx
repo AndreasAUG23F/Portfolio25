@@ -14,7 +14,7 @@ const projects = [
     date: "DEC 2024",
     description:
       "An e-commerce prototype focused on performance and user-first UX flows.",
-    thumbnail: semThumb,
+    thumbnail: jsThumb,
   },
   {
     id: "js-frameworks",
@@ -22,7 +22,7 @@ const projects = [
     date: "JAN 2024",
     description:
       "A sleek SPA demoing modern frameworks in a component-driven architecture.",
-    thumbnail: jsThumb,
+    thumbnail: semThumb,
   },
   {
     id: "exam-2",

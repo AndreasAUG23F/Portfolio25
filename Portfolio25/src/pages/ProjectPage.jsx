@@ -7,10 +7,10 @@ import {
   FaTimes,
   FaChevronLeft,
   FaChevronRight,
+  FaCopy,
   FaReact,
   FaHtml5,
   FaCss3Alt,
-  FaCopy,
 } from "react-icons/fa";
 import {
   SiJavascript,
@@ -19,22 +19,31 @@ import {
   SiFigma,
 } from "react-icons/si";
 
+// Logos (thumbnail images) for each project
+import jsLogo from "../assets/images/bidifyLogo.png";
+import semLogo from "../assets/images/lazy-sales-logo.png";
+import examLogo from "../assets/images/LogoHolidazeBlue.png";
+
 // Screenshots for JS Frameworks
 import jsThumb from "../assets/images/bidifyLogo.png";
-// Screenshots for Semester-2
-import semThumb from "../assets/images/lazy-sales-logo.png";
-// Screenshots for Holidaze (Exam-2)
-import hsc1 from "../assets/images/hsc1.png";
-import hsc2 from "../assets/images/hsc2.png";
-import hsc3 from "../assets/images/hsc3.png";
-import hsc4 from "../assets/images/hsc4.png";
+// Screenshots for Semester‐2
+import semThumb1 from "../assets/images/bidifysc-1.jpg";
+import semThumb2 from "../assets/images/bidifysc-2.jpg";
+import semThumb3 from "../assets/images/bidifysc-3.png";
+import semThumb4 from "../assets/images/bidifysc-4.jpg";
+// Screenshots for Holidaze (Exam‐2)
+import hsc1 from "../assets/images/hsc1.jpg";
+import hsc2 from "../assets/images/hsc2.jpg";
+import hsc3 from "../assets/images/hsc3.jpg";
+import hsc4 from "../assets/images/hsc4.jpg";
 
 const allProjects = [
   {
     id: "js-frameworks",
     title: "JavaScript Frameworks",
     description:
-      "A sleek SPA demoing modern component-driven architecture with React, React Router and Tailwind CSS.",
+      "A sleek SPA demoing modern component-driven architecture with React, React Router and Tailwind CSS. In this project, I optimized component reusability, improved client-side routing, and added dark-mode support. Below you’ll find reflections on how I honed these skills and further improvements I could make.",
+    logo: semLogo,
     liveUrl: "https://yourdomain.com/js-frameworks",
     repoUrl: "https://github.com/username/js-frameworks",
     features: [
@@ -44,54 +53,63 @@ const allProjects = [
     ],
     screenshots: [jsThumb],
     tech: [
-      { name: "React", icon: <FaReact /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-      { name: "JavaScript", icon: <SiJavascript /> },
-      { name: "HTML5", icon: <FaHtml5 /> },
-      { name: "CSS3", icon: <FaCss3Alt /> },
+      { name: "React", icon: <FaReact size={20} /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss size={20} /> },
+      { name: "JavaScript", icon: <SiJavascript size={20} /> },
+      { name: "HTML5", icon: <FaHtml5 size={20} /> },
+      { name: "CSS3", icon: <FaCss3Alt size={20} /> },
     ],
+    reflections:
+      "Originally, this assignment met all basic requirements. Based on feedback, I moved my API base URL into a constants file for easier environment switching. I also added JSDoc comments to improve documentation. Going forward, I’d integrate TypeScript to catch potential type errors earlier and further modularize components.",
   },
   {
     id: "semester-2",
     title: "Semester Project 2",
     description:
-      "An e-commerce prototype focused on performance and user-first flows, built with React and external APIs.",
-    liveUrl: "https://yourdomain.com/semester-2",
-    repoUrl: "https://github.com/username/semester-2",
+      "An e-commerce prototype focused on performance and user-first flows, built with React and Noroff’s external APIs. I implemented product listing, filtering, cart persistence, and mobile-first responsiveness. Below are my reflections and how I applied feedback.",
+    logo: jsLogo,
+    liveUrl: "https://bidify-semesterproject.netlify.app/",
+    repoUrl:
+      "https://github.com/AndreasAUG23F/Bidify-SemesterProject-2/blob/main/README.md",
     features: [
       "Product listing & filtering",
       "Cart management with localStorage",
       "Responsive mobile-first design",
     ],
-    screenshots: [semThumb],
+    screenshots: [semThumb1, semThumb2, semThumb3, semThumb4],
     tech: [
-      { name: "React", icon: <FaReact /> },
-      { name: "TypeScript", icon: <SiTypescript /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-      { name: "Figma", icon: <SiFigma /> },
+      { name: "Figma", icon: <SiFigma size={20} /> },
+      { name: "JavaScript", icon: <SiJavascript size={20} /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss size={20} /> },
+      { name: "HTML5", icon: <FaHtml5 size={20} /> },
     ],
+    reflections:
+      "I refactored the Create Listing feature by extracting all preview, media-field, and form-submission logic into dedicated modules, improving code organization and maintainability without altering existing functionality.",
   },
   {
     id: "exam-2",
     title: "Holidaze (Exam Project 2)",
     description:
-      "A travel booking site optimized for speed, accessibility and UX, featuring search, detail pages and map integration.",
+      "A travel booking site optimized for speed, accessibility and UX, featuring search, detail pages, and map integration. For this exam, I focused on ARIA compliance, code-splitting, and lazy-loaded media. My reflections are summarized below.",
+    logo: examLogo,
     liveUrl: "https://holidazer.netlify.app/",
-    repoUrl: "https://github.com/Andreasjoa23/PE2-Holidaze.git",
+    repoUrl: "https://github.com/Andreasjoa23/PE2-Holidaze/blob/main/README.md",
     features: [
-      "Accessible components (ARIA, keyboard nav)",
+      "Accessible components (ARIA, keyboard navigation)",
       "Lazy-loaded images & code splitting",
       "Interactive map integration",
     ],
     screenshots: [hsc1, hsc2, hsc3, hsc4],
     tech: [
-      { name: "React", icon: <FaReact /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-      { name: "TypeScript", icon: <SiTypescript /> },
-      { name: "HTML5", icon: <FaHtml5 /> },
-      { name: "CSS3", icon: <FaCss3Alt /> },
-      { name: "Figma", icon: <SiFigma /> },
+      { name: "React", icon: <FaReact size={20} /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss size={20} /> },
+      { name: "TypeScript", icon: <SiTypescript size={20} /> },
+      { name: "HTML5", icon: <FaHtml5 size={20} /> },
+      { name: "CSS3", icon: <FaCss3Alt size={20} /> },
+      { name: "Figma", icon: <SiFigma size={20} /> },
     ],
+    reflections:
+      "This project is being graded by an external examiner, so I will not be able to share my reflections until after the exam is finalized.",
   },
 ];
 
@@ -127,14 +145,14 @@ export default function ProjectPage() {
 
   const copyLink = () => {
     navigator.clipboard.writeText(window.location.href);
-    alert("Link kopiert til utklippstavlen!");
+    alert("Link copied to clipboard!");
   };
 
   return (
     <main className="bg-[#101B28] text-white py-16">
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-          {/* Lukkeknapp */}
+          {/* Close button */}
           <button
             onClick={closeModal}
             className="absolute top-6 right-6 bg-white p-2 rounded-full"
@@ -142,7 +160,7 @@ export default function ProjectPage() {
             <FaTimes className="text-[#101B28] text-2xl" />
           </button>
 
-          {/* Forrige */}
+          {/* Previous */}
           <button
             onClick={prev}
             className="absolute left-6 bg-white p-2 rounded-full"
@@ -150,14 +168,14 @@ export default function ProjectPage() {
             <FaChevronLeft className="text-[#101B28] text-2xl" />
           </button>
 
-          {/* Bilde */}
+          {/* Screenshot */}
           <img
             src={project.screenshots[currentIndex]}
             alt={`${project.title} screenshot ${currentIndex + 1}`}
             className="max-w-full max-h-full rounded-lg shadow-lg"
           />
 
-          {/* Neste */}
+          {/* Next */}
           <button
             onClick={next}
             className="absolute right-6 bg-white p-2 rounded-full"
@@ -168,9 +186,18 @@ export default function ProjectPage() {
       )}
 
       <div className="max-w-4xl mx-auto px-6 space-y-16">
-        {/* — Header */}
+        {/* — Header with Logo Thumbnail and Copy Link */}
         <header className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold text-[#00FF8C]">{project.title}</h1>
+          <div className="flex items-center space-x-4">
+            <img
+              src={project.logo}
+              alt={`${project.title} logo`}
+              className="w-12 h-12 rounded-md border border-gray-500"
+            />
+            <h1 className="text-3xl font-bold text-[#00FF8C]">
+              {project.title}
+            </h1>
+          </div>
           <button
             onClick={copyLink}
             className="inline-flex items-center gap-2 bg-[#00FF8C] text-[#101B28] px-4 py-2 rounded hover:bg-[#00e77a] transition"
@@ -179,9 +206,14 @@ export default function ProjectPage() {
             <span>Copy URL</span>
           </button>
         </header>
-        <p className="text-gray-300">{project.description}</p>
 
-        <div className="flex flex-wrap gap-4">
+        {/* — Detail Description */}
+        <section>
+          <p className="text-gray-300 leading-relaxed">{project.description}</p>
+        </section>
+
+        {/* — Live & Code Links */}
+        <section className="flex flex-wrap gap-4">
           <a
             href={project.liveUrl}
             target="_blank"
@@ -198,7 +230,7 @@ export default function ProjectPage() {
           >
             View Code <FaGithub />
           </a>
-        </div>
+        </section>
 
         <hr className="border-gray-700" />
 
@@ -219,10 +251,26 @@ export default function ProjectPage() {
 
         <hr className="border-gray-700" />
 
-        {/* — Screenshots */}
+        {/* — Main Article Image with Caption */}
+        <section>
+          <figure className="text-center">
+            <img
+              src={project.screenshots[0]}
+              alt={`${project.title} main screenshot`}
+              className="mx-auto w-full max-w-lg rounded-lg shadow-lg"
+            />
+            <figcaption className="mt-2 text-gray-400 italic">
+              {project.title} – main screenshot
+            </figcaption>
+          </figure>
+        </section>
+
+        <hr className="border-gray-700" />
+
+        {/* — Additional Screenshots Gallery */}
         <section>
           <h2 className="text-2xl font-semibold text-[#00FF8C] mb-4">
-            Screenshots
+            Additional Screenshots
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {project.screenshots.map((src, i) => (
@@ -259,6 +307,18 @@ export default function ProjectPage() {
               </span>
             ))}
           </div>
+        </section>
+
+        <hr className="border-gray-700" />
+
+        {/* — Reflections & Improvements */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#00FF8C] mb-4">
+            Reflections & Improvements
+          </h2>
+          <p className="text-gray-300 leading-relaxed whitespace-pre-line">
+            {project.reflections}
+          </p>
         </section>
 
         <hr className="border-gray-700" />
