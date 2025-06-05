@@ -1,5 +1,7 @@
+// src/components/Header.jsx
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
 
 export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -44,6 +46,7 @@ export default function Header() {
             </svg>
             Home
           </Link>
+
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setDropdownOpen((o) => !o)}
@@ -60,7 +63,7 @@ export default function Header() {
               </svg>
             </button>
             {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg overflow-hidden z-50">
+              <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden z-50">
                 <Link
                   to="/prosjekt/js-frameworks"
                   className="block px-4 py-2 text-[#101B28] hover:bg-gray-100"
@@ -85,6 +88,17 @@ export default function Header() {
               </div>
             )}
           </div>
+
+          {/* GitHub Button */}
+          <a
+            href="https://github.com/AndreasAUG23F"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center hover:text-[#00FF8C] transition"
+          >
+            <FaGithub className="mr-1 h-5 w-5" />
+            GitHub
+          </a>
         </nav>
       </div>
     </header>
