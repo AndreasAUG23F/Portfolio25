@@ -1,8 +1,5 @@
-// src/components/ContactForm.jsx
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-
-// no init() here – we'll pass the key on each send call
 
 export default function ContactForm() {
   const [status, setStatus] = useState(null);
@@ -19,10 +16,10 @@ export default function ContactForm() {
 
     emailjs
       .send(
-        "service_838kasp", // your Service ID
-        "template_66jucxr", // your Template ID
+        "service_838kasp",
+        "template_66jucxr",
         templateParams,
-        "ZWJJoqVe-5rZRSVDz" // your Public Key
+        "ZWJJoqVe-5rZRSVDz"
       )
       .then(
         () => setStatus("success"),

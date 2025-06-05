@@ -1,4 +1,3 @@
-// src/components/Skills.jsx
 import React, { useRef } from "react";
 import { FaHtml5, FaCss3Alt, FaReact, FaGithub } from "react-icons/fa";
 import {

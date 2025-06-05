@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import noroffLogo from "../assets/images/noroff-logo.png"; // put Noroff logo here
+import noroffLogo from "../assets/images/noroff-logo.png";
 
 export default function AboutAndQuote() {
   return (

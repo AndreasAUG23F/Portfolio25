@@ -1,4 +1,3 @@
-// src/pages/ProjectPage.jsx
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
@@ -24,18 +23,17 @@ import jsLogo from "../assets/images/bidifyLogo.png";
 import semLogo from "../assets/images/lazy-sales-logo.png";
 import examLogo from "../assets/images/LogoHolidazeBlue.png";
 
-// Screenshots for JS Frameworks
-import jsThumb from "../assets/images/bidifyLogo.png";
+// Screenshots for JavaScript Frameworks
 import lssc1 from "../assets/images/lssc1.jpg";
 import lssc2 from "../assets/images/lssc2.jpg";
 import lssc3 from "../assets/images/lssc3.jpg";
 import lssc4 from "../assets/images/lssc4.jpg";
-// Screenshots for Semester‐2
+// Screenshots for Semester-2
 import semThumb1 from "../assets/images/bidifysc-1.jpg";
 import semThumb2 from "../assets/images/bidifysc-2.jpg";
 import semThumb3 from "../assets/images/bidifysc-3.png";
 import semThumb4 from "../assets/images/bidifysc-4.jpg";
-// Screenshots for Holidaze (Exam‐2)
+// Screenshots for Holidaze (Exam-2)
 import hsc1 from "../assets/images/hsc1.jpg";
 import hsc2 from "../assets/images/hsc2.jpg";
 import hsc3 from "../assets/images/hsc3.jpg";
@@ -46,15 +44,10 @@ const allProjects = [
     id: "js-frameworks",
     title: "JavaScript Frameworks",
     description:
-      "A sleek SPA demoing modern component-driven architecture with React, React Router and Tailwind CSS. In this project, I optimized component reusability, improved client-side routing, and added dark-mode support. Below you’ll find reflections on how I honed these skills and further improvements I could make.",
+      "A sleek SPA demoing modern component-driven architecture with React, React Router and Tailwind CSS. In this project, I optimized component reusability, improved client-side routing, and added dark-mode support.",
     logo: semLogo,
     liveUrl: "https://lazysales.netlify.app/",
     repoUrl: "https://github.com/annechh/ca-js-frameworks?tab=readme-ov-file",
-    features: [
-      "Dynamic routing with React Router",
-      "Context-powered theme switcher",
-      "Form handling & validation",
-    ],
     screenshots: [lssc1, lssc2, lssc3, lssc4],
     tech: [
       { name: "React", icon: <FaReact size={20} /> },
@@ -70,16 +63,11 @@ const allProjects = [
     id: "semester-2",
     title: "Semester Project 2",
     description:
-      "An e-commerce prototype focused on performance and user-first flows, built with React and Noroff’s external APIs. I implemented product listing, filtering, cart persistence, and mobile-first responsiveness. Below are my reflections and how I applied feedback.",
+      "An e-commerce prototype focused on performance and user-first flows, built with React and Noroff’s external APIs. I implemented product listing, filtering, cart persistence, and mobile-first responsiveness.",
     logo: jsLogo,
     liveUrl: "https://bidify-semesterproject.netlify.app/",
     repoUrl:
       "https://github.com/AndreasAUG23F/Bidify-SemesterProject-2/blob/main/README.md",
-    features: [
-      "Product listing & filtering",
-      "Cart management with localStorage",
-      "Responsive mobile-first design",
-    ],
     screenshots: [semThumb1, semThumb2, semThumb3, semThumb4],
     tech: [
       { name: "Figma", icon: <SiFigma size={20} /> },
@@ -88,21 +76,16 @@ const allProjects = [
       { name: "HTML5", icon: <FaHtml5 size={20} /> },
     ],
     reflections:
-      "I refactored the Create Listing feature by extracting all preview, media-field, and form-submission logic into dedicated modules, improving code organization and maintainability without altering existing functionality.",
+      "I refactored the Create Listing feature by extracting preview, media-field, and form-submission logic into dedicated modules, improving code organization and maintainability without altering existing functionality.",
   },
   {
     id: "exam-2",
     title: "Holidaze (Exam Project 2)",
     description:
-      "A travel booking site optimized for speed, accessibility and UX, featuring search, detail pages, and map integration. For this exam, I focused on ARIA compliance, code-splitting, and lazy-loaded media. My reflections are summarized below.",
+      "A travel booking site optimized for speed, accessibility and UX, featuring search, detail pages, and map integration. For this exam, I focused on ARIA compliance, code-splitting, and lazy-loaded media.",
     logo: examLogo,
     liveUrl: "https://holidazer.netlify.app/",
     repoUrl: "https://github.com/Andreasjoa23/PE2-Holidaze/blob/main/README.md",
-    features: [
-      "Accessible components (ARIA, keyboard navigation)",
-      "Lazy-loaded images & code splitting",
-      "Interactive map integration",
-    ],
     screenshots: [hsc1, hsc2, hsc3, hsc4],
     tech: [
       { name: "React", icon: <FaReact size={20} /> },
@@ -113,7 +96,7 @@ const allProjects = [
       { name: "Figma", icon: <SiFigma size={20} /> },
     ],
     reflections:
-      "This project is being graded by an external examiner, so I will not be able to share my reflections until after the exam is finalized.My partner and I worked together on this assignment to build an online booking website. It was our first time working with TypeScript, and the experience was both exciting and challenging. I really enjoyed exploring it, and I plan to spend more time practicing and improving my TypeScript skills in the future.",
+      "This project is being graded by an external examiner, so I will share reflections after the exam is finalized.",
   },
 ];
 
@@ -156,30 +139,23 @@ export default function ProjectPage() {
     <main className="bg-[#101B28] text-white py-16">
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-          {/* Close button */}
           <button
             onClick={closeModal}
             className="absolute top-6 right-6 bg-white p-2 rounded-full"
           >
             <FaTimes className="text-[#101B28] text-2xl" />
           </button>
-
-          {/* Previous */}
           <button
             onClick={prev}
             className="absolute left-6 bg-white p-2 rounded-full"
           >
             <FaChevronLeft className="text-[#101B28] text-2xl" />
           </button>
-
-          {/* Screenshot */}
           <img
             src={project.screenshots[currentIndex]}
             alt={`${project.title} screenshot ${currentIndex + 1}`}
             className="max-w-full max-h-full rounded-lg shadow-lg"
           />
-
-          {/* Next */}
           <button
             onClick={next}
             className="absolute right-6 bg-white p-2 rounded-full"
@@ -234,23 +210,6 @@ export default function ProjectPage() {
           >
             View Code <FaGithub />
           </a>
-        </section>
-
-        <hr className="border-gray-700" />
-
-        {/* — Key Features */}
-        <section>
-          <h2 className="text-2xl font-semibold text-[#00FF8C] mb-4">
-            Key Features
-          </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-300">
-            {project.features.map((f) => (
-              <li key={f} className="flex items-start">
-                <span className="text-[#00FF8C] mr-2">•</span>
-                <span>{f}</span>
-              </li>
-            ))}
-          </ul>
         </section>
 
         <hr className="border-gray-700" />

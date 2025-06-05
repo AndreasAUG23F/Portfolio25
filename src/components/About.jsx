@@ -1,4 +1,3 @@
-// src/components/About.jsx (wrap in motion)
 import React from "react";
 import { motion } from "framer-motion";
 
