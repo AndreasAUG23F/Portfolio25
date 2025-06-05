@@ -1,11 +1,13 @@
+// src/components/Hero.jsx
 import React from "react";
 import Typewriter from "typewriter-effect";
-import profilePic from "../assets/images/profile.jpg";
+import profilePic from "../assets/images/profile.JPG";
 
 export default function Hero() {
   return (
-    <section className="bg-[#101B28] text-white flex items-center justify-center min-h-screen px-6">
+    <section className="bg-[#101B28] text-white flex items-center justify-center min-h-screen px-6 relative">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 max-w-6xl mx-auto">
+        {/* Tekst-siden */}
         <div className="text-center lg:text-left space-y-6">
           <h2 className="text-5xl lg:text-6xl font-extrabold text-[#00FF8C] leading-tight">
             <Typewriter
@@ -31,8 +33,10 @@ export default function Hero() {
             See my projects
           </button>
         </div>
+
+        {/* Profilbilde-siden */}
         <div className="flex justify-center lg:justify-end">
-          <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-[#]">
+          <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-[#00FF8C]">
             <img
               src={profilePic}
               alt="Andreas Abrahamsen"
@@ -41,6 +45,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Nede-bukken */}
       <div className="absolute bottom-10 flex justify-center w-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
