@@ -12,7 +12,9 @@ export default function Footer() {
       <footer className="bg-[#101B28] text-gray-300 py-16">
         <div className="w-full flex justify-between items-center px-8">
           {/* Branding flush to the left */}
-          <span className="text-white text-5xl font-bold">A2X</span>
+          <span className="text-white text-5xl font-bold">
+            Andreas Abrahamsen
+          </span>
 
           {/* Footer nav flush to the right */}
           <nav className="flex items-center space-x-12">

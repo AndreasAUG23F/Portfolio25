@@ -21,7 +21,7 @@ export default function Header() {
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <Link to="/">
           <h1 className="text-2xl font-semibold text-white cursor-pointer hover:opacity-80">
-            A2X
+            Andreas Abrahamsen
           </h1>
         </Link>
         <nav className="flex items-center space-x-6 uppercase font-medium text-white">

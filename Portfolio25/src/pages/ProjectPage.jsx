@@ -26,6 +26,10 @@ import examLogo from "../assets/images/LogoHolidazeBlue.png";
 
 // Screenshots for JS Frameworks
 import jsThumb from "../assets/images/bidifyLogo.png";
+import lssc1 from "../assets/images/lssc1.jpg";
+import lssc2 from "../assets/images/lssc2.jpg";
+import lssc3 from "../assets/images/lssc3.jpg";
+import lssc4 from "../assets/images/lssc4.jpg";
 // Screenshots for Semester‐2
 import semThumb1 from "../assets/images/bidifysc-1.jpg";
 import semThumb2 from "../assets/images/bidifysc-2.jpg";
@@ -44,14 +48,14 @@ const allProjects = [
     description:
       "A sleek SPA demoing modern component-driven architecture with React, React Router and Tailwind CSS. In this project, I optimized component reusability, improved client-side routing, and added dark-mode support. Below you’ll find reflections on how I honed these skills and further improvements I could make.",
     logo: semLogo,
-    liveUrl: "https://yourdomain.com/js-frameworks",
-    repoUrl: "https://github.com/username/js-frameworks",
+    liveUrl: "https://lazysales.netlify.app/",
+    repoUrl: "https://github.com/annechh/ca-js-frameworks?tab=readme-ov-file",
     features: [
       "Dynamic routing with React Router",
       "Context-powered theme switcher",
       "Form handling & validation",
     ],
-    screenshots: [jsThumb],
+    screenshots: [lssc1, lssc2, lssc3, lssc4],
     tech: [
       { name: "React", icon: <FaReact size={20} /> },
       { name: "Tailwind CSS", icon: <SiTailwindcss size={20} /> },
@@ -60,7 +64,7 @@ const allProjects = [
       { name: "CSS3", icon: <FaCss3Alt size={20} /> },
     ],
     reflections:
-      "Originally, this assignment met all basic requirements. Based on feedback, I moved my API base URL into a constants file for easier environment switching. I also added JSDoc comments to improve documentation. Going forward, I’d integrate TypeScript to catch potential type errors earlier and further modularize components.",
+      "Based on feedback, I added JSDoc comments to improve documentation. Going forward, I’d integrate TypeScript to catch potential type errors earlier and further modularize components.",
   },
   {
     id: "semester-2",
@@ -109,7 +113,7 @@ const allProjects = [
       { name: "Figma", icon: <SiFigma size={20} /> },
     ],
     reflections:
-      "This project is being graded by an external examiner, so I will not be able to share my reflections until after the exam is finalized.",
+      "This project is being graded by an external examiner, so I will not be able to share my reflections until after the exam is finalized.My partner and I worked together on this assignment to build an online booking website. It was our first time working with TypeScript, and the experience was both exciting and challenging. I really enjoyed exploring it, and I plan to spend more time practicing and improving my TypeScript skills in the future.",
   },
 ];
 
